@@ -1,0 +1,23 @@
+form{
+    width: 40%;
+    padding: 3%;
+}
+
+div{
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+span{
+    width: 100%;
+    color: red;
+    font-weight: bold;
+}
+
+input{
+    display: inline-block;
+    height: 1.5em;
+    width: 100%;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
