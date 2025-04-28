@@ -29,11 +29,12 @@ webserver.route('/index')
   try {
     const name = req.body.name;
     const fam = req.body.fam;
+   
 
     const regexUpper = /^[A-ZА-Я]/; 
 
-    const nameErr = name.length < 5 || !regexUpper.test(name[0]) ? "Имя должно составлять более 5 символов и начинаться с заглавной буквы" : "";
-    const famErr = fam.length < 10 || !regexUpper.test(fam[0]) ? "Фамилия должна составлять более 10 символов и начинаться с заглавной буквы" : "";
+    const nameErr = name.length < 5 || !regexUpper.test(name[0]) || name.includes(' ') ? "Имя должно составлять более 5 символов, начинаться с заглавной буквы и не содержать пробелы" : "";
+    const famErr = fam.length < 10 || !regexUpper.test(fam[0]) || fam.includes(' ') ? "Фамилия должна составлять более 10 символов, начинаться с заглавной буквы и не содержать пробелы" : "";
   
     const templateRepl = {
       "[nameErr]": nameErr,
